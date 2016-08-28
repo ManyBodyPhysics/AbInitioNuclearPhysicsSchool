@@ -1,0 +1,88 @@
+# Strange way of testing for vortex...
+# #ifdef NON_VORTEX
+TITLE: Overview of material 28th Indian-Summer School on Ab Initio Methods in Nuclear Physics
+
+TOC: off
+# #else
+TITLE: Overview of material 28th Indian-Summer School on Ab Initio Methods in Nuclear Physics
+AUTHOR: Morten Hjorth-Jensen  Email:hjensen@nscl.msu.edu
+# #endif
+
+<%
+pub_url = 'https://manybodyphysics.github.io/AbInitioNuclearPhysicsSchool/doc/pub'
+published = ['hfock', 'secondquant', 'fci', 'mbpt', 'cc',]
+chapters = {
+ 'hfock': 'Introduction and Hartree-Fock theory',
+ 'secondquant': 'Second quantization',
+ 'fci': 'The nuclear shell model and full configuration interaction theory',
+ 'mbpt': 'Effective interactions for the nuclear shell-model',
+ 'cc': 'Coupled cluster theory and nuclear structure',
+}
+%>
+
+
+
+
+
+<%def name="text_types(name)">
+
+ * LaTeX PDF:
+   * For printing:
+     * "Standard one-page format": "${pub_url}/${name}/pdf/${name}-print.pdf", compact: "6 pages per sheet": "${pub_url}/${name}/pdf/${name}-print6.pdf"
+   * For screen viewing:
+     * "standard Beamer format": "${pub_url}/${name}/pdf/${name}-beamer.pdf"
+ * HTML:
+   * "Plain html style": "${pub_url}/${name}/html/${name}.html"
+   * "Reveal html style for easy reading on mobile devices": "${pub_url}/${name}/html/${name}-reveal.html"
+   * "Bootstrap html style for easy reading on mobile devices": "${pub_url}/${name}/html/${name}-bs.html"
+ * iPython notebook:
+   * "ipynb file": "${pub_url}/${name}/ipynb/${name}.ipynb"
+
+</%def>
+
+<%def name="slide_types(name)">
+</%def>
+
+The teaching material is produced in various formats for printing and on-screen reading.
+
+!split
+The PDF files are based on LaTeX and have seldom technical
+failures that cannot be easily corrected.
+The HTML-based files, called ``HTML'' and ``ipynb'' below, apply MathJax
+for rendering LaTeX formulas and sometimes this technology gives rise
+to unexpected failures (e.g.,
+incorrect rendering in a web page despite correct LaTeX syntax in the
+formula). Consult the corresponding PDF
+files if you find missing or incorrectly rendered
+formulas in HTML or ipython notebook files.
+
+
+======= 28th Indian-Summer School on Ab Initio Methods in Nuclear Physics =======
+
+% for ch in published:
+===== ${chapters[ch]} =====
+
+${text_types(ch)}
+
+% endfor
+
+===== Selected Texts on Nuclear Structure and Many-body theory =====
+!bblock
+* Nuclear structure
+ * Heyde, *The Nuclear Shell Model*, Springer 1990
+ * Lawson, *Theory of the Nuclear Shell Model*, Oxford 1980
+ * Ring and Schuck, *Nuclear Many-Body Theory*, Springer 1980
+ * Talmi, *Simple Models of Complex Nuclei: The Shell Model and Interacting Boson Model*, Harwood Academic Publishers 1993.
+* Many-body theories
+ * Blaizot and Ripka, *Quantum Theory of Finite systems*, MIT press 1986
+ * Fetter and Walecka, *Quantum Theory of Many-Particle Systems*, McGraw-Hill, 1971.
+ * Dickhoff and Van Neck, *Many-Body Theory Exposed*, World Scientific, 2006.
+!eblock
+
+===== Links and useful software =====
+* Useful links
+ * When I write code in C++ I tend to recommend to use the linear algebra library "armadillo":"http://arma.sourceforge.net/". 
+ * For OS X users I recommend using "brew":"http://brew.sh/".
+ * To set up github, use the "guides":"https://guides.github.com/" and/or the github "link":"https://github.com/". 
+ * An excellent IDE for c++ programmers is "Qt Creator":"http://www.qt.io/ide/"
+
