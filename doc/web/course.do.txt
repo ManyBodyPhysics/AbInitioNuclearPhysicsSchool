@@ -1,6 +1,4 @@
 TITLE: Overview of material 28th Indian-Summer School on Ab Initio Methods in Nuclear Physics
-TOC: off
-TITLE: Overview of material 28th Indian-Summer School on Ab Initio Methods in Nuclear Physics
 AUTHOR: Morten Hjorth-Jensen  Email:hjensen@nscl.msu.edu
 
 <%
@@ -11,8 +9,8 @@ chapters = {
  'spdata': 'Single-particle basis functions and selected nuclear data',
  'secondquant': 'Second quantization',
  'fci': 'The nuclear shell model and full configuration interaction theory',
- 'mbpt': 'Effective interactions for the nuclear shell-model',
- 'cc': 'Coupled cluster theory and nuclear structure',
+ 'mbpt': 'Many-body perturbation theory',
+ 'cc': 'Coupled cluster theory and infinite nuclear matter',
 }
 %>
 
