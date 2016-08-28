@@ -137,16 +137,17 @@ MathJax.Hub.Config({
 <!-- author(s): Morten Hjorth-Jensen -->
 
 <center>
-<b>Morten Hjorth-Jensen</b> 
+<b>Morten Hjorth-Jensen</b> [1, 2]
 </center>
 
-<p>
-<!-- institution -->
+<p>&nbsp;<br>
+<!-- institution(s) -->
 
-<center><b><a href="http://www.nscl.msu.edu/" target="_blank">National Superconducting Cyclotron Laboratory</a> and <a href="https://www.pa.msu.edu/" target="_blank">Department of Physics and Astronomy</a>, <a href="http://www.msu.edu/" target="_blank">Michigan State University</a>, East Lansing, MI 48824, USA</b></center>
+<center>[1] <b><a href="http://www.nscl.msu.edu/" target="_blank">National Superconducting Cyclotron Laboratory</a> and <a href="https://www.pa.msu.edu/" target="_blank">Department of Physics and Astronomy</a>, <a href="http://www.msu.edu/" target="_blank">Michigan State University</a>, East Lansing, MI 48824, USA</b></center>
+<center>[2] <b>Department of Physics, University of Oslo, N-0316 Oslo, Norway</b></center>
 <br>
 <p>&nbsp;<br>
-<center><h4>28th Indian-Summer School on Ab Initio Methods in Nuclear Physics, which will be held August 29 - September 2, 2016, in Prague, Czech Republic.</h4></center> <!-- date -->
+<center><h4>28th Indian-Summer School on Ab Initio Methods in Nuclear Physics</h4></center> <!-- date -->
 <br>
 <p>
 
@@ -157,7 +158,27 @@ MathJax.Hub.Config({
 
 
 <section>
-<h2 id="___sec0">Why Hartree-Fock?  </h2>
+<h2 id="___sec0">Overview of lectures  </h2>
+The aim of this series of lectures is to give you an overview of some selected post Hartree-Fock methods, with an empahsis on computational issues. The online material contains also material on second quantization and some background material on single-particle basis functions.
+
+<p>
+We will 
+
+<ul>
+<p><li> Start with a discussion of the Hartree-Fock (HF) approach since it serves as input to the other methods. This is our first lecture.</li>
+<p><li> The HF lecture will also allow us to bring in some mathematical aspects of basis functions. We will end the HF lecture with a discussion of a simple Python program which implements the HF algorithm.</li>
+<p><li> We move then over to Full Configuration Interaction (FCI) theory (popularly called the nuclear shell model). This is our second lecture and partly third lecture. FCI will also be covered in more detail by Maris' and Navratil's lectures.</li>
+<p><li> We discuss then approximative methods like many-body perturbation theory (MBPT),  with links to FCI and applications to infinite nuclear matter. This is the third lecture.</li>
+<p><li> Finally we discuss coupled cluster (CC) theory with links to FCI and MBPT and applications to infinite nuclear matter. Coupled cluster theory are discussed in the fourth and fifth lectures. Numerical examples will be discussed and codes are fully available.</li>
+</ul>
+<p>
+
+Other methods like Green's function approaches will be discussed by Soma and cluster methods by Neff.
+</section>
+
+
+<section>
+<h2 id="___sec1">Why Hartree-Fock?  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -203,7 +224,7 @@ that is to find a local minimum with a Slater determinant \( \Phi_0 \) being the
 
 
 <section>
-<h2 id="___sec1">Why Hartree-Fock?  </h2>
+<h2 id="___sec2">Why Hartree-Fock?  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -227,7 +248,7 @@ The so-called Hartree-Fock potential \( \hat{u}^{\mathrm{HF}} \) brings an expli
 
 
 <section>
-<h2 id="___sec2">Definitions and notations </h2>
+<h2 id="___sec3">Definitions and notations </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -262,7 +283,7 @@ one derived from the self-consistent solution of the Hartree-Fock equations to b
 
 
 <section>
-<h2 id="___sec3">Definitions and notations </h2>
+<h2 id="___sec4">Definitions and notations </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -293,7 +314,7 @@ has to be antisymmetric, resulting in the eigenvalue \( \beta = -1 \).
 
 
 <section>
-<h2 id="___sec4">Definitions and notations </h2>
+<h2 id="___sec5">Definitions and notations </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -318,7 +339,7 @@ are quantum numbers needed to describe remaining quantum numbers.
 
 
 <section>
-<h2 id="___sec5">Definitions and notations </h2>
+<h2 id="___sec6">Definitions and notations </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -345,7 +366,7 @@ many-body interactions are present.
 
 
 <section>
-<h2 id="___sec6">Definitions and notations </h2>
+<h2 id="___sec7">Definitions and notations </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -370,7 +391,7 @@ where we have used the shorthand \( d\mathbf{\tau}=dx_1dr_2\dots dr_A \).
 
 
 <section>
-<h2 id="___sec7">Brief reminder on some linear algebra properties </h2>
+<h2 id="___sec8">Brief reminder on some linear algebra properties </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -404,7 +425,7 @@ $$
 
 
 <section>
-<h2 id="___sec8">Basic Matrix Features </h2>
+<h2 id="___sec9">Basic Matrix Features </h2>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -428,7 +449,7 @@ $$
 
 
 <section>
-<h2 id="___sec9">Basic Matrix Features </h2>
+<h2 id="___sec10">Basic Matrix Features </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -463,7 +484,7 @@ and the sum runs over all \( n! \) permutations.  The quantity \( p_i \) represe
 
 
 <section>
-<h2 id="___sec10">Basic Matrix Features, simple \( 2 \times 2 \) determinant  </h2>
+<h2 id="___sec11">Basic Matrix Features, simple \( 2 \times 2 \) determinant  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -482,7 +503,7 @@ where in the last term we have interchanged the column indices \( 1 \) and \( 2 
 
 
 <section>
-<h2 id="___sec11">Definitions and notations </h2>
+<h2 id="___sec12">Definitions and notations </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -503,7 +524,7 @@ summation over all possible permutations of two particles.
 
 
 <section>
-<h2 id="___sec12">Definitions and notations </h2>
+<h2 id="___sec13">Definitions and notations </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -531,7 +552,7 @@ $$
 
 
 <section>
-<h2 id="___sec13">Definitions and notations </h2>
+<h2 id="___sec14">Definitions and notations </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -561,7 +582,7 @@ determinant reproduces it.
 
 
 <section>
-<h2 id="___sec14">Definitions and notations </h2>
+<h2 id="___sec15">Definitions and notations </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -597,7 +618,7 @@ $$
 
 
 <section>
-<h2 id="___sec15">Definitions and notations </h2>
+<h2 id="___sec16">Definitions and notations </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -627,7 +648,7 @@ $$
 
 
 <section>
-<h2 id="___sec16">Definitions and notations </h2>
+<h2 id="___sec17">Definitions and notations </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -653,7 +674,7 @@ $$
 
 
 <section>
-<h2 id="___sec17">Definitions and notations </h2>
+<h2 id="___sec18">Definitions and notations </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -682,7 +703,7 @@ Hamiltonian.
 
 
 <section>
-<h2 id="___sec18">Definitions and notations </h2>
+<h2 id="___sec19">Definitions and notations </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -704,7 +725,7 @@ are orthogonal.
 
 
 <section>
-<h2 id="___sec19">Definitions and notations </h2>
+<h2 id="___sec20">Definitions and notations </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -736,7 +757,7 @@ all pairs twice.
 
 
 <section>
-<h2 id="___sec20">Definitions and notations </h2>
+<h2 id="___sec21">Definitions and notations </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -753,7 +774,7 @@ $$
 
 
 <section>
-<h2 id="___sec21">Definitions and notations </h2>
+<h2 id="___sec22">Definitions and notations </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -778,7 +799,7 @@ $$
 
 
 <section>
-<h2 id="___sec22">Compact functional </h2>
+<h2 id="___sec23">Compact functional </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -794,7 +815,7 @@ $$
 
 
 <section>
-<h2 id="___sec23">Properties of the interaction elements </h2>
+<h2 id="___sec24">Properties of the interaction elements </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -816,7 +837,7 @@ $$
 
 
 <section>
-<h2 id="___sec24">Redefining the matrix elements </h2>
+<h2 id="___sec25">Redefining the matrix elements </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -853,7 +874,7 @@ $$
 
 
 <section>
-<h2 id="___sec25">Rewriting the energy functional </h2>
+<h2 id="___sec26">Rewriting the energy functional </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -886,7 +907,7 @@ In our coordinate space derivations below we will spell out the Hartree-Fock equ
 
 
 <section>
-<h2 id="___sec26">Reminder on Variational Calculus and Lagrangian Multipliers  </h2>
+<h2 id="___sec27">Reminder on Variational Calculus and Lagrangian Multipliers  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -914,7 +935,7 @@ The constraints can be treated via the technique of Lagrangian multipliers
 
 
 <section>
-<h2 id="___sec27">Variational Calculus and Lagrangian Multipliers, simple example  </h2>
+<h2 id="___sec28">Variational Calculus and Lagrangian Multipliers, simple example  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -946,7 +967,7 @@ We will, for the sake of notational convenience,  skip the variables \( x,y,z \)
 
 
 <section>
-<h2 id="___sec28">Manipulating terms  </h2>
+<h2 id="___sec29">Manipulating terms  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -970,7 +991,7 @@ $$
 
 
 <section>
-<h2 id="___sec29">Adding the Lagrangian multiplier  </h2>
+<h2 id="___sec30">Adding the Lagrangian multiplier  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1002,7 +1023,7 @@ where we have skipped the dependence on \( x,y,z \) and introduced the shorthand
 
 
 <section>
-<h2 id="___sec30">And with the Euler-Lagrange equations we get  </h2>
+<h2 id="___sec31">And with the Euler-Lagrange equations we get  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1029,7 +1050,7 @@ a powerful method for obtaining approximate solutions of the wave function.
 
 
 <section>
-<h2 id="___sec31">Hartree-Fock by varying the coefficients of a wave function expansion </h2>
+<h2 id="___sec32">Hartree-Fock by varying the coefficients of a wave function expansion </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1053,7 +1074,7 @@ to truncate the above sum.  We assume that the basis \( \phi_{\lambda} \) is ort
 
 
 <section>
-<h2 id="___sec32">More on linear algebra  </h2>
+<h2 id="___sec33">More on linear algebra  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1089,7 +1110,7 @@ $$
 
 
 <section>
-<h2 id="___sec33">Coefficients of a wave function expansion </h2>
+<h2 id="___sec34">Coefficients of a wave function expansion </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1113,7 +1134,7 @@ This propertry is extremely useful when we build up a basis of many-body Stater 
 
 
 <section>
-<h2 id="___sec34">More Basic Matrix Features, simple \( 2 \times 2 \) determinant, useful property of determinants  </h2>
+<h2 id="___sec35">More Basic Matrix Features, simple \( 2 \times 2 \) determinant, useful property of determinants  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1135,7 +1156,7 @@ $$
 
 
 <section>
-<h2 id="___sec35">More Basic Matrix Features, \( n \times n \) determinant </h2>
+<h2 id="___sec36">More Basic Matrix Features, \( n \times n \) determinant </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1163,7 +1184,7 @@ This is a property we will use in our Hartree-Fock discussions.
 
 
 <section>
-<h2 id="___sec36">More Basic Matrix Features, a general \( n \times n \) determinant </h2>
+<h2 id="___sec37">More Basic Matrix Features, a general \( n \times n \) determinant </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1190,7 +1211,7 @@ This is a property we will use in our Hartree-Fock discussions. Convince yoursel
 
 
 <section>
-<h2 id="___sec37">A general Slater determinant </h2>
+<h2 id="___sec38">A general Slater determinant </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1226,7 +1247,7 @@ which is nothing but \( det(\mathbf{C})det(\Phi) \), with \( det(\Phi) \) being 
 
 
 <section>
-<h2 id="___sec38">Hartree-Fock by varying the coefficients of a wave function expansion </h2>
+<h2 id="___sec39">Hartree-Fock by varying the coefficients of a wave function expansion </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1250,7 +1271,7 @@ $$
 
 
 <section>
-<h2 id="___sec39">Hartree-Fock by varying the coefficients of a wave function expansion </h2>
+<h2 id="___sec40">Hartree-Fock by varying the coefficients of a wave function expansion </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1262,7 +1283,7 @@ For general single-particle states we employ the labels \( pqrs\dots \).
 
 
 <section>
-<h2 id="___sec40">Hartree-Fock by varying the coefficients of a wave function expansion </h2>
+<h2 id="___sec41">Hartree-Fock by varying the coefficients of a wave function expansion </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1294,7 +1315,7 @@ where \( \Phi^{HF} \) is the new Slater determinant defined by the new basis of 
 
 
 <section>
-<h2 id="___sec41">Hartree-Fock by varying the coefficients of a wave function expansion </h2>
+<h2 id="___sec42">Hartree-Fock by varying the coefficients of a wave function expansion </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1313,7 +1334,7 @@ $$
 
 
 <section>
-<h2 id="___sec42">Hartree-Fock by varying the coefficients of a wave function expansion </h2>
+<h2 id="___sec43">Hartree-Fock by varying the coefficients of a wave function expansion </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1341,7 +1362,7 @@ $$
 
 
 <section>
-<h2 id="___sec43">Hartree-Fock by varying the coefficients of a wave function expansion </h2>
+<h2 id="___sec44">Hartree-Fock by varying the coefficients of a wave function expansion </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1366,7 +1387,7 @@ $$
 
 
 <section>
-<h2 id="___sec44">Hartree-Fock by varying the coefficients of a wave function expansion </h2>
+<h2 id="___sec45">Hartree-Fock by varying the coefficients of a wave function expansion </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1384,7 +1405,7 @@ Note that the sums over greek indices run over the number of basis set functions
 
 
 <section>
-<h2 id="___sec45">Hartree-Fock by varying the coefficients of a wave function expansion </h2>
+<h2 id="___sec46">Hartree-Fock by varying the coefficients of a wave function expansion </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1414,7 +1435,7 @@ It suffices to tabulate the matrix elements \( \langle \alpha | h | \beta \rangl
 
 
 <section>
-<h2 id="___sec46">Hartree-Fock algorithm </h2>
+<h2 id="___sec47">Hartree-Fock algorithm </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1433,7 +1454,7 @@ The Hartree-Fock equations are solved in an iterative waym starting with a guess
 
 
 <section>
-<h2 id="___sec47">Hartree-Fock algorithm </h2>
+<h2 id="___sec48">Hartree-Fock algorithm </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1465,7 +1486,7 @@ $$
 
 
 <section>
-<h2 id="___sec48">Hartree-Fock algorithm </h2>
+<h2 id="___sec49">Hartree-Fock algorithm </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1488,7 +1509,7 @@ $$
 
 
 <section>
-<h2 id="___sec49">Hartree-Fock algorithm </h2>
+<h2 id="___sec50">Hartree-Fock algorithm </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1519,7 +1540,7 @@ energies and \( m \) is the number of single-particle states.
 
 
 <section>
-<h2 id="___sec50">Analysis of Hartree-Fock equations and Koopman's theorem </h2>
+<h2 id="___sec51">Analysis of Hartree-Fock equations and Koopman's theorem </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1545,7 +1566,7 @@ Our single-particle states \( ijk\dots \) are now single-particle states obtaine
 
 
 <section>
-<h2 id="___sec51">Analysis of Hartree-Fock equations and Koopman's theorem </h2>
+<h2 id="___sec52">Analysis of Hartree-Fock equations and Koopman's theorem </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1563,7 +1584,7 @@ This form will be used in our discussion of Koopman's theorem.
 
 
 <section>
-<h2 id="___sec52">Analysis of Hartree-Fock equations and Koopman's theorem </h2>
+<h2 id="___sec53">Analysis of Hartree-Fock equations and Koopman's theorem </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b>Atomic physics case.</b>
 <p>
@@ -1593,7 +1614,7 @@ where we have removed a single-particle state \( k\le F \), that is a state belo
 
 
 <section>
-<h2 id="___sec53">Analysis of Hartree-Fock equations and Koopman's theorem </h2>
+<h2 id="___sec54">Analysis of Hartree-Fock equations and Koopman's theorem </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1624,7 +1645,7 @@ $$
 
 
 <section>
-<h2 id="___sec54">Analysis of Hartree-Fock equations and Koopman's theorem </h2>
+<h2 id="___sec55">Analysis of Hartree-Fock equations and Koopman's theorem </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1642,7 +1663,7 @@ Koopman's theorem states that for example the ionization energy of a closed-shel
 
 
 <section>
-<h2 id="___sec55">Analysis of Hartree-Fock equations and Koopman's theorem </h2>
+<h2 id="___sec56">Analysis of Hartree-Fock equations and Koopman's theorem </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1661,7 +1682,7 @@ in terms of the particles or degrees of freedom which we believe are the fundame
 
 
 <section>
-<h2 id="___sec56">Analysis of Hartree-Fock equations, Koopman's theorem </h2>
+<h2 id="___sec57">Analysis of Hartree-Fock equations, Koopman's theorem </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1691,7 +1712,7 @@ where we have removed a single-particle state \( k\le F \), that is a state belo
 
 
 <section>
-<h2 id="___sec57">Analysis of Hartree-Fock equations and Koopman's theorem </h2>
+<h2 id="___sec58">Analysis of Hartree-Fock equations and Koopman's theorem </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1725,7 +1746,7 @@ $$
 
 
 <section>
-<h2 id="___sec58">Analysis of Hartree-Fock equations and Koopman's theorem </h2>
+<h2 id="___sec59">Analysis of Hartree-Fock equations and Koopman's theorem </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1750,7 +1771,7 @@ define separation energies. We have thus our first link between nuclear forces (
 
 
 <section>
-<h2 id="___sec59">Analysis of Hartree-Fock equations and Koopman's theorem </h2>
+<h2 id="___sec60">Analysis of Hartree-Fock equations and Koopman's theorem </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1787,7 +1808,7 @@ $$
 
 
 <section>
-<h2 id="___sec60">Analysis of Hartree-Fock equations and Koopman's theorem </h2>
+<h2 id="___sec61">Analysis of Hartree-Fock equations and Koopman's theorem </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1813,7 +1834,7 @@ nucleus. Examples are \( {}^{22}\mbox{O} \), \( {}^{24}\mbox{O} \), \( {}^{40}\m
 
 
 <section>
-<h2 id="___sec61">Analysis of Hartree-Fock equations and Koopman's theorem </h2>
+<h2 id="___sec62">Analysis of Hartree-Fock equations and Koopman's theorem </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1855,7 +1876,7 @@ $$
 <p>
 <!-- --- begin exercise --- -->
 
-<h2 id="___sec62">Exercise 1: Hartree-Fock Slater determinant </h2>
+<h2 id="___sec63">Exercise 1: Hartree-Fock Slater determinant </h2>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -1909,7 +1930,7 @@ Hint: \( C \) is a unitary matrix.
 <p>
 <!-- --- begin exercise --- -->
 
-<h2 id="___sec63">Exercise 2: Matrix elements for the Hartree-Fock method and the nuclear shell model </h2>
+<h2 id="___sec64">Exercise 2: Matrix elements for the Hartree-Fock method and the nuclear shell model </h2>
 
 <p>
 We will assume that we can build various Slater determinants using an orthogonal  single-particle basis \( \psi_{\lambda} \), 
@@ -2021,46 +2042,40 @@ These results simplify to a large extent shell-model calculations.
 <p>
 <!-- --- begin exercise --- -->
 
-<h2 id="___sec64">Exercise 3: Developing a  Hartree-Fock program </h2>
+<h2 id="___sec65">Project 3: Developing a  Hartree-Fock program </h2>
 
 <p>
-Neutron drops are a powerful theoretical laboratory for testing,
-validating and improving nuclear structure models. Indeed, all
-approaches to nuclear structure, from ab initio theory to shell model
-to density functional theory are applicable in such systems. We will,
-therefore, use neutron drops as a test system for setting up a
-Hartree-Fock code.  This program can later be extended to studies of
-the binding energy of nuclei like $^{16}$O or $^{40}$Ca. The
+Here we will demonstrate how do develop a Hartree-Fock program that will allow us to compute 
+the binding energy of nuclei like $^{16}$O or $^{40}$Ca. 
+The
 single-particle energies obtained by solving the Hartree-Fock
 equations can then be directly related to experimental separation
-energies. For those of you interested in such studies, the program you
-will end up developing here can be used in later projects, with simple
-extensions.  Since Hartree-Fock theory is the starting point for
+energies. Since Hartree-Fock theory is the starting point for
 several many-body techniques (density functional theory, random-phase
 approximation, shell-model etc), the aim here is to develop a computer
 program to solve the Hartree-Fock equations in a given single-particle basis,
 here the harmonic oscillator.
 
 <p>
-The Hamiltonian for a system of \( N \) neutron drops confined in a
+The Hamiltonian for a system of \( A \) nucleons confined in a
 harmonic potential reads
 <p>&nbsp;<br>
 $$
-\hat{H} = \sum_{i=1}^{N} \frac{\hat{p}_{i}^{2}}{2m}+\sum_{i=1}^{N} \frac{1}{2} m\omega {r}_{i}^{2}+\sum_{i < j} \hat{V}_{ij},
+\hat{H} = \sum_{i=1}^{A} \frac{\hat{p}_{i}^{2}}{2m}+\sum_{i=1}^{A} \frac{1}{2} m\omega {r}_{i}^{2}+\sum_{i < j} \hat{V}_{ij},
 $$
 <p>&nbsp;<br>
 
-with \( \hbar^{2}/2m = 20.73 \) fm$^{2}$, \( mc^{2} = 938.90590 \) MeV, and 
+with \( \hbar^{2}/2m = 20.73 \) fm$^{2}$, \( mc^{2} = 938.926 \) MeV, and 
 \( \hat{V}_{ij} \) is the two-body interaction potential whose 
 matrix elements are precalculated
-and to be read in by you.
+and to be read in by you, see weblink below.
 
 <p>
 The Hartree-Fock algorithm can be broken down as follows. We recall that  our Hartree-Fock matrix  is 
 <p>&nbsp;<br>
 $$
 \hat{h}_{\alpha\beta}^{HF}=\langle \alpha \vert\hat{h}_0 \vert \beta \rangle+
-\sum_{j=1}^N\sum_{\gamma\delta} C^*_{j\gamma}C_{j\delta}\langle \alpha\gamma|V|\beta\delta\rangle_{AS}.
+\sum_{j=1}^A\sum_{\gamma\delta} C^*_{j\gamma}C_{j\delta}\langle \alpha\gamma|V|\beta\delta\rangle_{AS}.
 $$
 <p>&nbsp;<br>
 
@@ -2070,7 +2085,7 @@ Hartree-Fock matrix becomes
 <p>&nbsp;<br>
 $$
 \hat{h}_{\alpha\beta}^{HF}=\epsilon_{\alpha}\delta_{\alpha,\beta}+
-\sum_{j=1}^N\sum_{\gamma\delta} C^*_{j\gamma}C_{j\delta}\langle \alpha\gamma|V|\beta\delta\rangle_{AS}.
+\sum_{j=1}^A\sum_{\gamma\delta} C^*_{j\gamma}C_{j\delta}\langle \alpha\gamma|V|\beta\delta\rangle_{AS}.
 $$
 <p>&nbsp;<br>
 
@@ -2094,7 +2109,7 @@ which is defined as
 <p>&nbsp;<br>
 $$
 \begin{equation}
-\rho_{\gamma\delta}=\sum_{i=1}^{N}\langle\gamma|i\rangle\langle i|\delta\rangle = \sum_{i=1}^{N}C_{i\gamma}C^*_{i\delta}.
+\rho_{\gamma\delta}=\sum_{i=1}^{A}\langle\gamma|i\rangle\langle i|\delta\rangle = \sum_{i=1}^{A}C_{i\gamma}C^*_{i\delta}.
 \tag{18}
 \end{equation}
 $$
@@ -2114,88 +2129,19 @@ It is convenient to use the density matrix since we can precalculate in every it
 Note that \( \langle \alpha\vert\hat{h}_0\vert\beta \rangle \) denotes the
 matrix elements of the one-body part of the starting hamiltonian. For
 self-bound nuclei \( \langle \alpha\vert\hat{h}_0\vert\beta \rangle \) is the
-kinetic energy, whereas for neutron drops, \( \langle \alpha \vert \hat{h}_0 \vert \beta \rangle \) represents the harmonic oscillator hamiltonian since
+kinetic energy while \( \langle \alpha \vert \hat{h}_0 \vert \beta \rangle \) represents the harmonic oscillator hamiltonian since
 the system is confined in a harmonic trap. If we are working in a
 harmonic oscillator basis with the same \( \omega \) as the trapping
 potential, then \( \langle \alpha\vert\hat{h}_0 \vert \beta \rangle \) is
 diagonal.
 
 <p>
-An example of a function written in python (see also the exercises below)  which performs the Hartree-Fock calculation is shown here. In setting up your code you will need to write a function which sets up the single-particle basis, the matrix elements \( t_{\alpha\gamma} \) of the one-body operator (called \( h0 \) in the function below) and the antisymmetrized TBMEs (called <em>nninteraction</em> in the code link below) and the density matrix elements \( \rho_{\beta\delta} \) (called <em>densityMatrix</em> below). 
+An example of a function written in python which performs the Hartree-Fock calculation is shown here. In setting up your code you will need to write a function which sets up the single-particle basis, the matrix elements \( t_{\alpha\gamma} \) of the one-body operator (called \( h0 \) in the function below) and the antisymmetrized TBMEs (called <em>nninteraction</em> in the code link below) and the density matrix elements \( \rho_{\beta\delta} \) (called <em>densityMatrix</em> below). 
 The python <a href="https://github.com/NuclearStructure/PHY981/blob/master/doc/ProjectsExercises/projects/2016/Codes/hfnuclei.py" target="_blank">program</a>  shows how one can, in a brute force way read in matrix elements in \( m \)-scheme and compute the Hartree-Fock single-particle energies for four major shells. The interaction which has been used is the so-called N3LO interaction of <a href="http://journals.aps.org/prc/abstract/10.1103/PhysRevC.68.041001" target="_blank">Machleidt and Entem</a>
 using the <a href="http://journals.aps.org/prc/abstract/10.1103/PhysRevC.75.061001" target="_blank">Similarity Renormalization Group</a> approach method to renormalize the interaction, using an oscillator energy \( \hbar\omega=10 \) MeV.
 
 <p>
-The nucleon-nucleon two-body matrix elements are in \( m \)-scheme and are fully anti-symmetrized. The Hartree-Fock programs uses the density matrix discussed above in order to compute the Hartree-Fock matrix.
-Here we display the Hartree-Fock part only, assuming that single-particle data and two-body matrix elements have already been read in.
-
-<p>
-We will perform Hartree-Fock calculations for eight, \( N=8 \), neutrons in an oscillator potentials with an oscillator frequency \( \hbar\omega =10 \) MeV. This means that we are filling the \( 0s \) and the \( 0p \) shells and that these single-particle states define the reference state, or our ansatz for the ground state.
-The total set of single-particle states will comprise four major shells only, that is the \( 0s \), \( 0p \), \( 1s0d \) and \( 1p0f \) shells.
-
-<p>
-The input file spdata.dat contains the information of all single-particle quantum numbers needed to define this space. In total we have \( 40 \) single-particle states labeled by \( n \), \( j \), \( l \) and \( m \), where \( m \) is the projection of the total single-particle angular momentum \( j \). To every set of single-particle quantum numbers there is a unique number \( p \) identifiying them, meaning that the two-body matrix elements in the file twobody.dat are identified as 
-\( \langle pq \vert \hat{v}\vert rs \rangle \).
-
-<p>
-You will need to read these two files and set up arrays which store the matrix elements while running the program.
-
-<p>
-<b>a)</b>
-Set up a Hartree-Fock program which uses first only the
-Harmonic oscillator single-particle Hamiltonian for for eight, \( N=8 \),
-neutrons in an oscillator potential with an oscillator energy
-\( \hbar\omega =10 \) MeV. Use the single-particle states defined in the
-file spdata.dat. This serves as a useful test of your calculations
-since the result should be the harmonic oscillator single-particle
-energies.
-
-<p>
-<b>b)</b>
-hamiltonian is diagonal in \( ljm \) (and independent of \( m \)), and that
-the Hartree-Fock equations can be written as 
-<p>&nbsp;<br>
-$$ \sum_{n_3}
-h^{lj}_{n_1n_3}C^{lj}_{n_3\bar{n}} =
-\epsilon_{\bar{n}lj}C^{lj}_{n_3\bar{n}}.  
-$$
-<p>&nbsp;<br>
-
-where the
-single-particle Hartree-Fock Hamiltonian matrix elements are 
-<p>&nbsp;<br>
-$$
-h^{lj}_{n_1n_3} = \delta_{n_3 n_1}(2n_1+l + 3/2)\hbar\omega +
-\sum_{n_2n_4}\sum_{l'j'}^{occ}\langle n_1ljn_2l'j'|V|n_3ljn_4l'j'\rangle\rho^{l'j'}_{n_4n_2}.  
-$$
-<p>&nbsp;<br>
-
-The
-\( occ \) on the second summation is to remind you that the sum is over
-\( l'j' \) values of occupied Hartree-Fock states only. This follows from
-the fact that the density matrix is diagonal in these quantum
-numbers. Note well that we need to do the additional summation over
-\( l' \), \( j' \).
-
-<p>
-<b>c)</b>
-Include thereafter the nucleon-nucleon
-interaction from the file twobody.dat and perform Hartree-Fock
-calculations for neutrons only using the single-particle states that
-comprise four major shells only, that is the \( 0s \), \( 0p \), \( 1s0d \) and
-\( 1p0f \) shells.  The occupied single-particle states are those of the
-\( 0s \) and \( 0p \) shells, having in total eight neutrons.  Compute the
-Hartree-Fock single-particle energies and compare the final results
-with the harmonic oscillator energies. Comment your results.
-
-<p>
-<b>d)</b>
-With a working program, add now eight protons and compute the
-Hartree-Fock single-particle energies for \( {}^{16}\mbox{O} \), that is both
-protons and neutrons. Compare the proton and neutron single-particle
-energies for the \( \varepsilon^{HF}_{0p_{1/2}} \) and
-\( \varepsilon^{HF}_{0d_{5/2}} \) with their corresponding separation
-energies. Which separation energies would you compare them with?
+The codes used to obtain the matrix elements are available at the <a href="https://github.com/ManyBodyPhysics/CENS" target="_blank">CENS site</a>.
 
 <p>
 The python
