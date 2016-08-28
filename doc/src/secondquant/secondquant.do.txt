@@ -1,8 +1,8 @@
 #* TO DO: add material about Wick's theorem and diagrammatic representation
 
 TITLE: Second Quantization
-AUTHOR: Morten Hjorth-Jensen {copyright, 2013-present|CC BY-NC} at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
-DATE:  28th Indian-Summer School on Ab Initio Methods in Nuclear Physics, which will be held August 29 - September 2, 2016, in Prague, Czech Republic
+AUTHOR: Morten Hjorth-Jensen {copyright, 2013-present|CC BY-NC} at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA & Department of Physics, University of Oslo, N-0316 Oslo, Norway
+DATE:  28th Indian-Summer School on Ab Initio Methods in Nuclear Physics
 
 
 !split

@@ -1,22 +1,16 @@
-# Strange way of testing for vortex...
-# #ifdef NON_VORTEX
-TITLE: Overview of material 28th Indian-Summer School on Ab Initio Methods in Nuclear Physics
-
-TOC: off
-# #else
 TITLE: Overview of material 28th Indian-Summer School on Ab Initio Methods in Nuclear Physics
 AUTHOR: Morten Hjorth-Jensen  Email:hjensen@nscl.msu.edu
-# #endif
 
 <%
 pub_url = 'https://manybodyphysics.github.io/AbInitioNuclearPhysicsSchool/doc/pub'
-published = ['hfock', 'secondquant', 'fci', 'mbpt', 'cc',]
+published = ['hfock', 'spdata', 'secondquant', 'fci', 'mbpt', 'cc',]
 chapters = {
  'hfock': 'Introduction and Hartree-Fock theory',
+ 'spdata': 'Single-particle basis functions and selected nuclear data',
  'secondquant': 'Second quantization',
  'fci': 'The nuclear shell model and full configuration interaction theory',
- 'mbpt': 'Effective interactions for the nuclear shell-model',
- 'cc': 'Coupled cluster theory and nuclear structure',
+ 'mbpt': 'Many-body perturbation theory',
+ 'cc': 'Coupled cluster theory and infinite nuclear matter',
 }
 %>
 
@@ -28,7 +22,7 @@ chapters = {
 
  * LaTeX PDF:
    * For printing:
-     * "Standard one-page format": "${pub_url}/${name}/pdf/${name}-print.pdf", compact: "6 pages per sheet": "${pub_url}/${name}/pdf/${name}-print6.pdf"
+     * "Standard one-page format": "${pub_url}/${name}/pdf/${name}-minted.pdf", compact: "6 pages per sheet": "${pub_url}/${name}/pdf/${name}-beamer-handouts2x3.pdf"
    * For screen viewing:
      * "standard Beamer format": "${pub_url}/${name}/pdf/${name}-beamer.pdf"
  * HTML:
@@ -78,11 +72,4 @@ ${text_types(ch)}
  * Fetter and Walecka, *Quantum Theory of Many-Particle Systems*, McGraw-Hill, 1971.
  * Dickhoff and Van Neck, *Many-Body Theory Exposed*, World Scientific, 2006.
 !eblock
-
-===== Links and useful software =====
-* Useful links
- * When I write code in C++ I tend to recommend to use the linear algebra library "armadillo":"http://arma.sourceforge.net/". 
- * For OS X users I recommend using "brew":"http://brew.sh/".
- * To set up github, use the "guides":"https://guides.github.com/" and/or the github "link":"https://github.com/". 
- * An excellent IDE for c++ programmers is "Qt Creator":"http://www.qt.io/ide/"
 
