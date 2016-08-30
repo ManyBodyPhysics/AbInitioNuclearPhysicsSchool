@@ -1,7 +1,7 @@
 # Slides for PHY981
-TITLE: Coupled Cluster theory
-AUTHOR: Morten Hjorth-Jensen {copyright, 2013-present|CC BY-NC} at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
-DATE:  Spring 2016
+TITLE: Coupled Cluster theory and infinite nuclear matter
+AUTHOR: Morten Hjorth-Jensen {copyright, 2013-present|CC BY-NC} at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA & Department of Physics, University of Oslo, N-0316 Oslo, Norway
+DATE:  28th Indian-Summer School on Ab Initio Methods in Nuclear Physics
 
 
 !split
@@ -492,5 +492,256 @@ label{eq:ccd2}
 \end{equation}
 !et
 This equation is solved the same way as we would do for Eq. (ref{eq:ccd1}). The final step is then to include all terms in Eq. (ref{eq:ccd}). 
+
+
+!split
+===== Introduction to studies of infinite matter =====
+
+ 
+Studies of infinite nuclear matter play an important role  in nuclear physics. The aim of this part of the lectures is to provide the necessary ingredients for perfoming studies of neutron star matter (or matter in $\beta$-equilibrium) and symmetric nuclear matter. 
+
+Here we will study infinite neutron matter 
+* at the Hartree-Fock with realistic nuclear forces and
+* using many-body methods like coupled-cluster theory or many-body perturbation theory
+
+
+!split
+=====  Infinite nuclear matter and neutron star matter =====
+
+Studies of dense baryonic matter are of central importance to our basic understanding 
+of the stability of nuclear matter, spanning from matter at high densities and temperatures
+to matter as found within dense astronomical objects  like neutron stars. 
+
+Neutron star matter
+at densities of  0.1 fm$^{-3}$ and greater, is often assumed to 
+be made of mainly neutrons, protons, electrons and 
+muons in beta equilibrium. However, other baryons like various hyperons may exist, as well as possible mesonic condensates and transitions to quark degrees of freedom at higher densities. 
+Here we focus on specific definitions of various phases and focus 
+on distinct phases of matter such as pure baryonic
+matter and/or quark matter.
+The composition of matter is then 
+determined by the requirements of chemical and electrical equilibrium.
+Furthermore, we will also consider matter at temperatures much lower
+than the typical Fermi energies.
+
+!split
+=====  Properties of infinite nuclear matter =====
+
+The equilibrium conditions are governed by the weak processes 
+(normally referred to as the processes
+for $\beta$-equilibrium)
+!bt
+\begin{equation} 
+      b_1 \rightarrow b_2 + l +\bar{\nu}_l \hspace{1cm} b_2 +l \rightarrow b_1 
++\nu_l,
+      label{eq:betadecay}
+\end{equation}
+!et
+where $b_1$ and $b_2$ refer to for example the baryons being a neutron and a proton, 
+respectively, 
+$l$ is either an electron or a muon and  $\bar{\nu}_l $
+and $\nu_l$ their respective anti-neutrinos and neutrinos. Muons typically 
+appear at
+a density close to nuclear matter saturation density, the latter being
+!bt
+\[
+     n_0 \approx 0.16 \pm 0.02 \hspace{1cm} \mathrm{fm}^{-3},
+\]
+!et
+with a corresponding binding energy ${\cal E}_0$ 
+for symmetric nuclear matter (SNM) at saturation density of
+!bt
+\[
+     {\cal E}_0 = B/A=-15.6\pm 0.2 \hspace{1cm} \mathrm{MeV}.
+\]
+!et
+
+
+!split
+===== The infinite neutron gas as a homogenous system =====
+
+This is a homogeneous system and the one-particle wave functions are given by plane wave functions normalized to a volume $\Omega$ 
+for a box with length $L$ (the limit $L\rightarrow \infty$ is to be taken after we have computed various expectation values)
+!bt
+\[
+\psi_{\mathbf{k}\sigma}(\mathbf{r})= \frac{1}{\sqrt{\Omega}}\exp{(i\mathbf{kr})}\xi_{\sigma}
+\]
+!et
+where $\mathbf{k}$ is the wave number and  $\xi_{\sigma}$ is a spin function for either spin up or down
+!bt
+\[ 
+\xi_{\sigma=+1/2}=\left(\begin{array}{c} 1 \\ 0 \end{array}\right) \hspace{0.5cm}
+\xi_{\sigma=-1/2}=\left(\begin{array}{c} 0 \\ 1 \end{array}\right).
+\]
+!et
+
+!split
+===== Periodic boundary conditions and single-particle states =====
+
+When using periodic boundary conditions, the 
+discrete-momentum single-particle basis functions 
+!bt
+\[
+\phi_{\mathbf{k}}(\mathbf{r}) =
+e^{i\mathbf{k}\cdot \mathbf{r}}/L^{d/2}
+\]
+!et
+are associated with 
+the single-particle energy   
+!bt
+\begin{align}
+  \varepsilon_{n_{x}, n_{y}} = \frac{\hbar^{2}}{2m} \left( \frac{2\pi }{L}\right)^{2}\left( n_{x}^{2} + n_{y}^{2}\right)
+\end{align}
+!et
+for two-dimensional sytems and 
+!bt
+\begin{align}
+  \varepsilon_{n_{x}, n_{y}, n_{z}} = \frac{\hbar^{2}}{2m}
+  \left( \frac{2\pi }{L}\right)^{2}
+  \left( n_{x}^{2} + n_{y}^{2} + n_{z}^{2}\right)
+\end{align} 
+!et
+for three-dimensional systems.
+
+!split
+===== More on periodic boundary conditions and single-particle states =====
+
+The table on the next slide illustrates  how single-particle energies
+    fill energy shells in a two-dimensional neutron box.
+  Here $n_{x}$ and $n_{y}$ are the momentum quantum numbers,
+  $n_{x}^{2} + n_{y}^{2}$ determines the single-particle 
+  energy level, $N_{\uparrow \downarrow }$ represents the 
+  cumulated number of spin-orbitals in an unpolarized spin
+  phase, and $N_{\uparrow \uparrow }$ stands for the
+  cumulated number of spin-orbitals in a spin-polarized
+  system.
+
+
+
+!split
+===== Magic numbers for the two-dimensional neutron (or electron)  gas =====
+
+
+|------------------------------------------------------------------------------------------------------|
+| $n_{x}^{2}+n_{y}^{2}$ | $n_{x}$ | $n_{y}$ |  $N_{\uparrow \downarrow }$ | $N_{\uparrow \uparrow }$   |
+|------------------------------------------------------------------------------------------------------|
+|    0                  | 0       | 0       | 2                           | 1                          |
+|------------------------------------------------------------------------------------------------------|
+|    1 | -1 |  0 | | |
+|    |  1 |  0 | | |
+|    |  0 | -1 | | |
+|    |  0 |  1 | 10 | 5 |
+|---------------------------|
+|    2  | -1 | -1 | | |
+|    | -1 |  1 | | |
+|    |  1 | -1 | | |
+|    |  1 |  1 | 18 | 9 |
+|---------------------------|
+|    4  | -2 | 0 | | |
+|    |  2 | 0 | | |
+|    |  0 | -2 | | |
+|    |  0 |  2 | 26 | 13 |
+|---------------------------|
+|    5  | -2 | -1 | | |
+|    |  2 | -1 | | |
+|    | -2 |  1 | | |
+|    |  2 |  1 | | |
+|    | -1 | -2 | | |
+|    | -1 |  2 | | |
+|    |  1 | -2 | | |
+|    |  1 |  2 | 42 | 21 |
+|---------------------------|
+
+
+
+
+!split
+=====  Three-dimensional neutron gas =====
+Using the same approach as made with the two-dimensional electron gas with the single-particle kinetic energy defined as
+!bt
+\[
+\frac{\hbar^2}{2m}\left(k_{n_x}^2+k_{n_y}^2k_{n_z}^2\right),
+\]
+!et
+and 
+!bt
+\[
+k_{n_i}=\frac{2\pi n_i}{L} \hspace{0.1cm} n_i = 0, \pm 1, \pm 2, \dots, 
+\]
+!et
+we can set up a similar table and obtain (assuming identical particles one and including spin up and spin down solutions)  for energies less than or equal to $n_{x}^{2}+n_{y}^{2}+n_{z}^{2}\le 3$
+
+
+!split
+=====  Single-particle states for the three-dimensional neutron gas =====
+
+|------------------------------------------------------------------------------------------------------|
+| $n_{x}^{2}+n_{y}^{2}+n_{z}^{2}$ | $n_{x}$ | $n_{y}$ | $n_{z}$ | $N_{\uparrow \downarrow }$ | 
+|------------------------------------------------------------------------------------------------------|
+|    0                  | 0       | 0       | 0                           | 2                          |
+|------------------------------------------------------------------------------------------------------|
+|    1                  | -1        | 0        |  0                           |                            |
+|    1                   | 1        |  0       |   0                          |                            |
+|    1                   | 0        |  -1       |  0                           |                            |
+|    1                   | 0        |   1      |   0                          |                            |
+|    1                   | 0        |   0      |  -1                           |                            |
+|    1                   | 0        |   0      |   1                          |   14                           |
+|------------------------------------------------------------------------------------------------------|
+|    2                  | -1        | -1        |  0                           |                            |
+|    2                   | -1        | 1       |   0                          |                            |
+|    2                   | 1        |  -1       |  0                           |                            |
+|    2                   | 1        |   1      |   0                          |                            |
+|    2                   | -1        |   0      |  -1                           |                            |
+|    2                   | -1        |   0      |   1                          |                             |
+|    2                   |  1        |   0      |  -1                           |                            |
+|    2                   |  1        |   0      |   1                          |                             |
+|    2                   |  0        |   -1      |  -1                           |                            |
+|    2                   |  0        |   -1     |   1                          |                             |
+|    2                   |  0        |   1      |  -1                           |                            |
+|    2                   |  0        |   1      |   1                          |  38                           |
+|------------------------------------------------------------------------------------------------------|
+|    3                  | -1        | -1        |  -1                           |                            |
+|    3                   | -1        | -1       |   1                          |                            |
+|    3                   | -1        |  1       |  -1                           |                            |
+|    3                   | -1        |  1      |   1                         |                            |
+|    3                   |  1        |   -1      |  -1                           |                            |
+|    3                   |  1        |   -1      |   1                          |                             |
+|    3                   |  1        |   1     |  -1                           |                            |
+|    3                   |  1        |   1      |   1                          | 54                             |
+|------------------------------------------------------------------------------------------------------|
+
+Continuing in this way we get for $n_{x}^{2}+n_{y}^{2}+n_{z}^{2}=4$  a total of 12 additional states, resulting in $?$ as a new magic number. We can continue like this by adding more shells.
+
+When performing calculations based on many-body perturbation theory, Coupled cluster theory or other many-body methods, we need then to add states above the Fermi level in order to sum over single-particle states which are not occupied.  
+
+
+
+
+!split
+=====  Input parameters  =====
+Every number of particles for filled shells defines also the number of particles to be used in a given calculation. We use the number of particles to define  the density of the system 
+!bt
+\[
+\rho = g \frac{k_F^3}{6\pi^2},
+\]
+!et
+where you need to define $k_F$ and the degeneracy $g$, which is two for one type of spin-$1/2$ particles and four for symmetric nuclear matter.
+
+With  the density we can define the length $L$ of the box used with periodic boundary contributions, that is use the relation
+!bt
+\[
+  V= L^3= \frac{A}{\rho}.
+\]
+!et
+Finally we can use $L$ to define the spacing to set up the spacing between varipus $k$-values, that is
+!bt
+\[
+  \Delta k = \frac{2\pi}{L}.
+\]
+!et
+Here, $A$ can be the number of nucleons. 
+
+
+
 
 
