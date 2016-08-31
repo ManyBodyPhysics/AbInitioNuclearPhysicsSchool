@@ -129,7 +129,6 @@ MathJax.Hub.Config({
 <section>
 <!-- ------------------- main content ---------------------- -->
 
-<!-- Slides for PHY981 -->
 
 
 <center><h1 style="text-align: center;">Coupled Cluster theory and infinite nuclear matter</h1></center>  <!-- document title -->
@@ -857,11 +856,11 @@ $$
 $$
 <p>&nbsp;<br>
 
-with a corresponding binding energy \( {\cal E}_0 \) 
+with a corresponding binding energy \( E_0 \) 
 for symmetric nuclear matter (SNM) at saturation density of
 <p>&nbsp;<br>
 $$
-     {\cal E}_0 = B/A=-15.6\pm 0.2 \hspace{1cm} \mathrm{MeV}.
+     E_0 = B/A=-15.6\pm 0.2 \hspace{1cm} \mathrm{MeV}.
 $$
 <p>&nbsp;<br>
 </section>
@@ -1074,6 +1073,470 @@ $$
 <p>&nbsp;<br>
 
 Here, \( A \) can be the number of nucleons.
+</section>
+
+
+<section>
+<h2 id="___sec39">Potential model employed in code development </h2>
+
+<p>
+The interaction we will use for these calculations is a semirealistic
+nucleon-nucleon potential known as the Minnesota potential
+<p>&nbsp;<br>
+$$
+V_{\alpha}\left(r\right)=V_{\alpha}\exp{(-\alpha r^{2})}.
+$$
+<p>&nbsp;<br>
+
+The spin and isospin
+dependence of the Minnesota potential is given by
+<p>&nbsp;<br>
+$$
+\begin{equation}
+V\left( r\right)=\frac{1}{2}\left( V_{R}+\frac{1}{2}\left(1+P_{12}^{\sigma}\right) V_{T}+\frac{1}{2}\left(1-P_{12}^{\sigma}\right) V_{S}\right)\left(1-P_{12}^{\sigma}P_{12}^{\tau}\right),
+\tag{7}
+\end{equation}
+$$
+<p>&nbsp;<br>
+
+where 
+<p>&nbsp;<br>
+$$
+P_{12}^{\sigma}=\frac{1}{2}\left(1+\sigma_{1}\cdot\sigma_{2}\right),
+$$
+<p>&nbsp;<br>
+
+and
+<p>&nbsp;<br>
+$$
+P_{12}^{\tau}=\frac{1}{2}\left( 1+\tau_{1}\cdot\tau_{2}\right)
+$$
+<p>&nbsp;<br>
+
+ are
+the spin and isospin exchange operators, respectively.
+</section>
+
+
+<section>
+<h2 id="___sec40">Fourier transform </h2>
+A Fourier
+transform to momentum space of the radial part 
+<p>&nbsp;<br>
+$$
+V_{\alpha}\left(r\right) 
+$$
+<p>&nbsp;<br>
+
+is rather simple since
+the radial depends only on the magnitude of the relative distance and
+thereby the relative momentum
+<p>&nbsp;<br>
+$$
+\mathbf{q}=\frac{1}{2}\left(\mathbf{k}_{p}-\mathbf{k}_{q}-\mathbf{k}_{r}+\mathbf{k}_{s}\right)
+$$
+<p>&nbsp;<br>
+
+Omitting spin and isospin dependencies, the momentum space version of the
+interaction reads
+<p>&nbsp;<br>
+$$
+\begin{equation}
+\langle \mathbf{k}_p \mathbf{k}_q \vert V_{\alpha}\vert\mathbf{k}_r\mathbf{k}_s\rangle=
+\frac{V_{\alpha}}{L^{3}}\left(\frac{\pi}{\alpha}\right)^{3/2}\exp{(\frac{-q^{2}}{4\alpha})}\delta_{\mathbf{k}_{p}+\mathbf{k}_{q},\mathbf{k}_{r}+\mathbf{k}_{s}}
+\tag{8}
+\end{equation}
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="___sec41">Developing a program for infinite matter  </h2>
+
+<ul>
+<p><li> Structure a code in terms of functions.</li>
+<p><li> Modularize your codes.</li>
+<p><li> Be able to  read input data flexibly.</li>
+<p><li> Write unit tests (test functions) and let your code undergo heavy testing.</li>
+<p><li> Refactor code in terms of classes (instead of functions only).</li>
+<p><li> Conduct and automate large-scale numerical experiments.</li>
+<p><li> New code is added in a modular fashion to a library (modules).</li>
+<p><li> Programs are run through convenient user interfaces.</li>
+<p><li> Use scripts in order to automatize  tedious manual work.</li>
+<p><li> Make sure your scientific investigations are reproducible and document properly your results.</li>
+<p><li> Use version control software like for example <b>git</b></li>
+</ul>
+</section>
+
+
+<section>
+<h2 id="___sec42">Codes and reading material  </h2>
+
+<ul>
+<p><li> The codes are all available from the coming Lectures Notes in Physics volume <a href="https://github.com/ManyBodyPhysics/LectureNotesPhysics/tree/master/doc/src/Chapter8-programs" target="_blank">An advanced course in computational nuclear physics: Bridging the scales from quarks to neutron stars, M. Hjorth-Jensen, M. P. Lombardo, U. van Kolck, Editors</a></li>
+<p><li> For more reading on CCD see chapter 8 of the coming Lectures Notes in Physics volume <a href="https://github.com/ManyBodyPhysics/LectureNotesPhysics/tree/master/doc/src/lnp.pdf" target="_blank">An advanced course in computational nuclear physics: Bridging the scales from quarks to neutron stars, M. Hjorth-Jensen, M. P. Lombardo, U. van Kolck, Editors</a></li>
+</ul>
+</section>
+
+
+<section>
+<h2 id="___sec43">The CCD equation  </h2>
+The CCD equations can be written as
+<p>&nbsp;<br>
+$$
+  \begin{align}
+  \left(\epsilon_i+\epsilon_j-\epsilon_a-\epsilon_b\right)t_{ij}^{ab}
+  = \langle ab \vert \hat{v} \vert ij \rangle & \nonumber
+  \\ +\frac{1}{2}\sum_{cd} \langle ab \vert \hat{v} \vert cd \rangle
+  t_{ij}^{cd}+\frac{1}{2}\sum_{kl} \langle kl \vert \hat{v} \vert ij
+  \rangle t_{kl}^{ab}+\hat{P}(ij\vert ab)\sum_{kc} \langle kb \vert
+  \hat{v} \vert cj \rangle t_{ik}^{ac} & \nonumber
+  \\ +\frac{1}{4}\sum_{klcd} \langle kl \vert \hat{v} \vert cd \rangle
+  t_{ij}^{cd}t_{kl}^{ab}+\hat{P}(ij)\sum_{klcd} \langle kl \vert
+  \hat{v} \vert cd \rangle t_{ik}^{ac}t_{jl}^{bd}& \nonumber
+  \\ -\frac{1}{2}\hat{P}(ij)\sum_{klcd} \langle kl \vert \hat{v} \vert
+  cd \rangle t_{ik}^{dc}t_{lj}^{ab}-\frac{1}{2}\hat{P}(ab)\sum_{klcd}
+  \langle kl \vert \hat{v} \vert cd \rangle t_{lk}^{ac}t_{ij}^{db},&
+\tag{9}
+\end{align}
+$$
+<p>&nbsp;<br>
+
+for all \( i < j \) and all \( a < b \), using the standard notation that
+  \( a,b,... \) are particle states and \( i,j,... \) are hole states. With
+  the CCD correlation energy given by
+<p>&nbsp;<br>
+$$
+  \begin{equation}
+  \Delta E_{CCD} = \frac{1}{4} \sum_{ijab}
+  \langle ij \vert\hat{v}\vert ab\rangle t^{ab}_{ij}.
+\tag{10}
+  \end{equation}
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="___sec44">Solving the CCD equations </h2>
+  One way to solve these equations, is to write equation
+  <a href="#mjx-eqn-3">(3)</a> as a series of iterative nonlinear algebraic equations
+<p>&nbsp;<br>
+$$
+  \begin{align}
+  t_{ij}^{ab}{}^{(n+1)} = \frac{1}{\epsilon^{ab}_{ij}} \bigg(\langle
+  ab \vert \hat{v} \vert ij \rangle & \nonumber
+  \\ +\frac{1}{2}\sum_{cd} \langle ab \vert \hat{v} \vert cd \rangle
+  t_{ij}^{cd}{}^{(n)}+\frac{1}{2}\sum_{kl} \langle kl \vert \hat{v}
+  \vert ij \rangle t_{kl}^{ab}{}^{(n)}+\hat{P}(ij\vert ab)\sum_{kc}
+  \langle kb \vert \hat{v} \vert cj \rangle t_{ik}^{ac}{}^{(n)} &
+  \nonumber \\ +\frac{1}{4}\sum_{klcd} \langle kl \vert \hat{v} \vert
+  cd \rangle
+  t_{ij}^{cd}{}^{(n)}t_{kl}^{ab}{}^{(n)}+\hat{P}(ij)\sum_{klcd}
+  \langle kl \vert \hat{v} \vert cd \rangle
+  t_{ik}^{ac}{}^{(n)}t_{jl}^{bd}{}^{(n)}& \nonumber
+  \\ -\frac{1}{2}\hat{P}(ij)\sum_{klcd} \langle kl \vert \hat{v} \vert
+  cd \rangle
+  t_{ik}^{dc}{}^{(n)}t_{lj}^{ab}{}^{(n)}-\frac{1}{2}\hat{P}(ab)\sum_{klcd}
+  \langle kl \vert \hat{v} \vert cd \rangle
+  t_{lk}^{ac}{}^{(n)}t_{ij}^{db}{}^{(n)} \bigg),&
+\tag{11}
+  \end{align}
+$$
+<p>&nbsp;<br>
+
+  for all \( i < j \) and all \( a < b \), where \( \epsilon^{ab}_{ij} =\left(\epsilon_i+\epsilon_j-\epsilon_a-\epsilon_b\right) \), and
+  \( t_{ij}^{ab}{}^{(n)} \) is the \( t \) amplitude for the nth iteration of
+  the series. This way, given some starting guess
+  \( t_{ij}^{ab}{}^{(0)} \), we can generate subsequent \( t \) amplitudes
+  that converges to some value.
+</section>
+
+
+<section>
+<h2 id="___sec45">Memory considerations </h2>
+
+<p>
+  Care should thus be placed into how we store these objects. These are
+  objects with four indices and a  sensible first implementation
+  of the CCD equations would be to create two four-dimensional arrays to store the
+  objects. However, it is often more convenient to work with simple
+  one-dimensional arrays instead.
+
+<p>
+   The goal of our code is to calculate the correlation energy,
+   \( \Delta E_{CCD} \), meaning that after each iteration of our equations, we use
+   our newest \( t \) amplitudes to update the correlation energy
+<p>&nbsp;<br>
+$$
+  \begin{equation}
+  \Delta E_{CCD}^{(n)} = \frac{1}{4} \sum_{ijab}
+  \langle ij\vert\hat{v}\vert ab\rangle t^{ab}_{ij}{}^{(n)}.
+\tag{12}
+\end{equation}
+$$
+<p>&nbsp;<br>
+
+  We check that our result is converged by testing whether the
+  most recent iteration has changed the correlation energy by less
+  than some tolerance threshold \( \eta \),
+<p>&nbsp;<br>
+$$
+  \begin{equation}
+  \eta > | \Delta E_{CCD}^{(n+1)} - \Delta E_{CCD}^{(n)} |.
+\tag{13}
+\end{equation}
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="___sec46">More on memory </h2>
+
+<p>
+  One limitation that will be ran into while trying to do realistic
+  CCD calculations is that of memory. The four-indexed two-body matrix elements (TBMEs) and
+  \( t \)-amplitudes have to store a lot of elements, and the size of these
+  arrays can quickly exceed the available memory on
+  a machine. If a calculation wants to use 500 single-particle basis states, then
+  a structure like \( \langle pq\vert v\vert rs\rangle  \) will need a  length of 500 for each of
+  its four indices, which means it will have \( 500^4 = 625\times 10^8 \)
+  elements. To get a handle on how much memory is used, consider the
+  elements as double-precision floating point type. One double takes
+  up 8 bytes of memory. This specific array would take up \( 8\times 625\times 10^8 \) bytes
+  = \( 5000 \times 10^8 \) bytes = \( 500 \) Gbytes of memory.
+</section>
+
+
+<section>
+<h2 id="___sec47">Using symmetries </h2>
+
+<p>
+Most personal
+  computers in 2016 have 4-8 Gbytes of RAM, meaning that this calculation would
+  be way out of reach. There are supercomputers that can handle
+  applications using 500 Gbytes of memory, but we can quickly reduce
+  the total memory required by applying some physical arguments. In
+  addition to vanishing elements with repeated indices, mentioned
+  above, elements that do not obey certain symmetries are also
+  zero. Almost all realistic two-body forces preserve some quantities
+  due to symmetries in the interaction. For example, an interaction
+  with rotational symmetry will conserve angular momentum. This means
+  that a two-body ket state \( \vert rs\rangle  \), which has some set of quantum
+  numbers, will retain quantum numbers corresponding to the
+  interaction symmetries after being acted on by \( \hat{v} \). This state
+  is then projected onto \( \vert pq\rangle  \) with its own set of quantum
+  numbers. Thus \( \langle pq|v|rs\rangle  \) is only non-zero if \( \vert pq\rangle \) and
+  \( \vert rs\rangle  \) share the same quantum numbers that are preserved by
+  \( \hat{v} \). In addition, because the cluster operators represent
+  excitations due to the interaction, \( t_{ij}^{ab} \) is only non-zero
+  if \( \vert ij\rangle  \) has the same relevant quantum numbers as \( \vert ab\rangle  \).
+</section>
+
+
+<section>
+<h2 id="___sec48">Using symmetries II </h2>
+
+<p>
+  To take advantage of this, these two-body ket states can be
+  organized into &quot;channels&quot; of shared quantum numbers. In the case
+  of the pairing model, the interaction preserves the total spin
+  projection of a two-body state, \( S_{z}=s_{z1}+s_{z2} \). The single
+  particle states can have spin of +1/2 or -1/2, so there can be three
+  two-body channels with \( S_{z}=-1,0,+1 \). These channels can then be
+  indexed with a unique label in a similar way to the single particle
+  index scheme. In more complicated systems, there will be many more
+  channels involving multiple symmetries, so it is useful to create a
+  data structure that stores the relevant two-body quantum numbers to
+  keep track of the labeling scheme.
+</section>
+
+
+<section>
+<h2 id="___sec49">Using symmetries III </h2>
+
+<p>
+  It is more efficient to use two-dimensional array data
+  structures, where the first index refers to the channel number and
+  the second refers to the element within that channel. So to access
+  matrix elements or \( t \) amplitudes, you can loop over the channels
+  first, then the indices within that channel. To get an idea of the
+  savings using this block diagonal structure, let's look at a case
+  with a plane wave basis, with three momentum and one spin quantum
+  numbers, with an interaction that conserves linear momentum in all
+  three dimensions, as well as the total spin projection. Using 502
+  basis states, the TBME's require about 0.23 Gb of memory in block
+  diagonal form, which is an enormous saving from the 500 Gb mentioned
+  earlier in the na\"ive storage scheme.
+</section>
+
+
+<section>
+<h2 id="___sec50">Using intermediates  </h2>
+
+<p>
+  Since the calculation of all  zeros can now be avoided,
+  improvements in speed and memory will now follow. To get a handle on
+  how these CCD calculations are implemented we need only to look at the
+  most expensive sum in equation <a href="#mjx-eqn-3">(3)</a>. This corresponds to
+  the sum over \( klcd \). Since this sum is repeated for all \( i < j \) and
+  \( a < b \), it means that these equations will scale as
+  \( \mathcal{O}(n_{p}^{4} n_{h}^{4}) \). However,
+  they can be rewritten using intermediates as
+<p>&nbsp;<br>
+$$
+  \begin{align}
+  0 = \langle ab|\hat{v}|ij \rangle + \hat{P}(ab) \sum_{c} \langle b| \chi
+    |c\rangle \langle ac| t |ij\rangle - \hat{P}(ij) \sum_{k} \langle k| \chi |j\rangle
+  \langle ab| t |ik\rangle & \nonumber \\ + \frac{1}{2}\sum_{cd} \langle ab|
+    \chi |cd\rangle \langle cd| t |ij\rangle + \frac{1}{2} \sum_{kl} \langle ab| t
+    |kl\rangle \langle kl| \chi |ij\rangle 
+\tag{14}\\ + \hat{P}(ij)\hat{P}(ab) \sum_{kc}
+  \langle ac| t |ik\rangle\langle kb| \chi |cj\rangle & \nonumber
+  \end{align}
+$$
+<p>&nbsp;<br>
+
+ for all \( i,j,a,b \).
+</section>
+
+
+<section>
+<h2 id="___sec51">Defining intermediates  </h2>
+
+<p>
+The intermediates \( \chi \) are defined as
+<p>&nbsp;<br>
+$$
+  \begin{equation}
+  \langle b| \chi |c \rangle =\langle b|f|c\rangle - \frac{1}{2} \sum_{kld}
+  \langle bd|t|kl\rangle \langle kl|v|cd\rangle
+\tag{15}
+\end{equation}
+$$
+<p>&nbsp;<br>
+
+<p>&nbsp;<br>
+$$
+  \begin{equation}
+  \langle k| \chi |j\rangle = \langle k|f|j\rangle + \frac{1}{2} \sum_{cdl}
+  \langle kl|v|cd\rangle \langle cd|t|jl\rangle
+\tag{16}
+\end{equation}
+$$
+<p>&nbsp;<br>
+
+<p>&nbsp;<br>
+$$
+  \begin{equation}
+  \langle kl| \chi |ij\rangle = \langle kl|v|ij\rangle + \frac{1}{2} \sum_{cd}
+  \langle kl|v|cd\rangle \langle cd|t|ij\rangle
+  \tag{17}
+  \end{equation}
+$$
+<p>&nbsp;<br>
+
+<p>&nbsp;<br>
+$$
+ \begin{equation}
+  \langle kb| \chi |cj\rangle = \langle kb|v|cj\rangle + \frac{1}{2} \sum_{dl}
+  \langle kl|v|cd\rangle \langle db|t|lj\rangle
+\tag{18}
+\end{equation}
+$$
+<p>&nbsp;<br>
+
+<p>&nbsp;<br>
+$$
+  \begin{equation}
+  \langle ab| \chi |cd\rangle = \langle ab|v|cd\rangle
+\tag{19}
+\end{equation}
+$$
+<p>&nbsp;<br>
+
+<p>
+  With the introduction of the above intermediates, the CCD equations scale now as \( \mathcal{O}(n_{h}^{2}n_{p}^{4}) \).
+</section>
+
+
+<section>
+<h2 id="___sec52">Speed up  </h2>
+
+<p>
+To  further speed up these computations, we see that these sums can be
+  written in terms of  matrix-matrix multiplications. It is not obvious how to
+  write all of these sums in such a way, but it is useful to first
+  recall that the expression for the multiplication of two matrices \( \hat{C} =\hat{A}\times \hat{B} \) can be written as
+<p>&nbsp;<br>
+$$
+  \begin{equation}
+  C_{ij} = \sum_{k} A_{ik} \times B_{kj}.
+\tag{20}
+\end{equation}
+$$
+<p>&nbsp;<br>
+
+  We observe then  that equation <a href="#mjx-eqn-17">(17)</a> can be written as
+  \[
+  \langle K| \chi |I\rangle = \langle K|v|I\rangle  + \frac{1}{2} \sum_{C}
+  \langle K|v|C\rangle \langle C|t|I\rangle 
+  \]
+  by mapping the two index pairs \( kl \to K, ij \to I, cd \to C \). The sum looks now 
+like a matrix-matrix multiplication. This is
+  useful because there are packages like BLAS (Basic Linear Algebra
+  Subprograms) which have extremely fast implementations of
+  matrix-matrix multiplication.
+</section>
+
+
+<section>
+<h2 id="___sec53">Testing brute force against block structures for MBPT(2) </h2>
+
+<p>
+<center>  <!-- FIGURE -->
+<hr class="figure">
+<center><p class="caption">Figure 1:  MBPT2 contribution to the correlation for pure neutron matter with \( N=14 \) neutrons and periodic boundary conditions. Up to approximately 1600 single-particle states have been included in the sums over intermediate states. </p></center>
+<p><img src="figslides/blockvsfull_log.png" align="bottom" width=500></p>
+</center>
+</section>
+
+
+<section>
+<h2 id="___sec54">Convergence properties for pure neutron matter I </h2>
+
+<p>
+<center>  <!-- FIGURE -->
+<hr class="figure">
+<center><p class="caption">Figure 2:  Energy per particle of pure neutron matter computed in the CCD approximation with the Minnesota potential for different numbers of particles with \( \mathrm{N_{max}=20} \). </p></center>
+<p><img src="figslides/fig1.png" align="bottom" width=500></p>
+</center>
+</section>
+
+
+<section>
+<h2 id="___sec55">Convergence properties for pure neutron matter II </h2>
+
+<p>
+<center>  <!-- FIGURE -->
+<hr class="figure">
+<center><p class="caption">Figure 3:  Energy per particle of pure neutron matter computed in the CCD approximation with the Minnesota potential for different model space sizes with \( \mathrm{A=114} \). </p></center>
+<p><img src="figslides/fig2.png" align="bottom" width=500></p>
+</center>
+</section>
+
+
+<section>
+<h2 id="___sec56">Comparing CCD with Monte Carlo </h2>
+
+<p>
+<center>  <!-- FIGURE -->
+<hr class="figure">
+<center><p class="caption">Figure 4:  CCD, Reference energy and Diffusion Monte Carlo results for pure neutron matter with \( 66 \) neutrons and \( \mathrm{N_{max}=36} \). </p></center>
+<p><img src="figslides/cimcccd.png" align="bottom" width=500></p>
+</center>
 </section>
 
 
