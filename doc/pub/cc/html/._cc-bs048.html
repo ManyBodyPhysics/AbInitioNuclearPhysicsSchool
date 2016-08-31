@@ -217,7 +217,7 @@ MathJax.Hub.Config({
         <ul class="dropdown-menu">
      <!-- navigation toc: --> <li><a href="._cc-bs001.html#___sec0" style="font-size: 80%;"><b>Introduction</b></a></li>
      <!-- navigation toc: --> <li><a href="._cc-bs002.html#___sec1" style="font-size: 80%;"><b>Introduction</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;A non-practical way of solving the eigenvalue problem</a></li>
+     <!-- navigation toc: --> <li><a href="._cc-bs003.html#___sec2" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;A non-practical way of solving the eigenvalue problem</a></li>
      <!-- navigation toc: --> <li><a href="._cc-bs004.html#___sec3" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;A non-practical way of solving the eigenvalue problem</a></li>
      <!-- navigation toc: --> <li><a href="._cc-bs005.html#___sec4" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;A non-practical way of solving the eigenvalue problem</a></li>
      <!-- navigation toc: --> <li><a href="._cc-bs006.html#___sec5" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;A non-practical way of solving the eigenvalue problem</a></li>
@@ -262,7 +262,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._cc-bs045.html#___sec44" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Solving the CCD equations</a></li>
      <!-- navigation toc: --> <li><a href="._cc-bs046.html#___sec45" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Memory considerations</a></li>
      <!-- navigation toc: --> <li><a href="._cc-bs047.html#___sec46" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;More on memory</a></li>
-     <!-- navigation toc: --> <li><a href="._cc-bs048.html#___sec47" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Using symmetries</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec47" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Using symmetries</a></li>
      <!-- navigation toc: --> <li><a href="._cc-bs049.html#___sec48" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Using symmetries II</a></li>
      <!-- navigation toc: --> <li><a href="._cc-bs050.html#___sec49" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Using symmetries III</a></li>
      <!-- navigation toc: --> <li><a href="._cc-bs051.html#___sec50" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Using intermediates</a></li>
@@ -284,38 +284,58 @@ MathJax.Hub.Config({
 
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 
-<a name="part0003"></a>
-<!-- !split  -->
+<a name="part0048"></a>
+<!-- !split -->
 
-<h2 id="___sec2" class="anchor">A non-practical way of solving the eigenvalue problem </h2>
+<h2 id="___sec47" class="anchor">Using symmetries </h2>
 
 <p>
-Before we proceed with the derivation of the Coupled cluster equations, let us repeat some of the arguments we presented during our FCI lectures. 
-In our FCI discussions, we rewrote the solution of the Schroedinger equation as a set of coupled equationsin the unknown coefficients \( C \). Let us repeat some of these arguments.
-To obtain the eigenstates and eigenvalues in terms of non-linear equations is not a very practical approach. However, it serves the scope of linking FCI theory with approximative solutions to the many-body problem
-like Coupled cluster (CC) theory
+Most personal
+  computers in 2016 have 4-8 Gbytes of RAM, meaning that this calculation would
+  be way out of reach. There are supercomputers that can handle
+  applications using 500 Gbytes of memory, but we can quickly reduce
+  the total memory required by applying some physical arguments. In
+  addition to vanishing elements with repeated indices, mentioned
+  above, elements that do not obey certain symmetries are also
+  zero. Almost all realistic two-body forces preserve some quantities
+  due to symmetries in the interaction. For example, an interaction
+  with rotational symmetry will conserve angular momentum. This means
+  that a two-body ket state \( \vert rs\rangle  \), which has some set of quantum
+  numbers, will retain quantum numbers corresponding to the
+  interaction symmetries after being acted on by \( \hat{v} \). This state
+  is then projected onto \( \vert pq\rangle  \) with its own set of quantum
+  numbers. Thus \( \langle pq|v|rs\rangle  \) is only non-zero if \( \vert pq\rangle \) and
+  \( \vert rs\rangle  \) share the same quantum numbers that are preserved by
+  \( \hat{v} \). In addition, because the cluster operators represent
+  excitations due to the interaction, \( t_{ij}^{ab} \) is only non-zero
+  if \( \vert ij\rangle  \) has the same relevant quantum numbers as \( \vert ab\rangle  \).
 
 <p>
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
-<li><a href="._cc-bs002.html">&laquo;</a></li>
+<li><a href="._cc-bs047.html">&laquo;</a></li>
   <li><a href="._cc-bs000.html">1</a></li>
-  <li><a href="._cc-bs001.html">2</a></li>
-  <li><a href="._cc-bs002.html">3</a></li>
-  <li class="active"><a href="._cc-bs003.html">4</a></li>
-  <li><a href="._cc-bs004.html">5</a></li>
-  <li><a href="._cc-bs005.html">6</a></li>
-  <li><a href="._cc-bs006.html">7</a></li>
-  <li><a href="._cc-bs007.html">8</a></li>
-  <li><a href="._cc-bs008.html">9</a></li>
-  <li><a href="._cc-bs009.html">10</a></li>
-  <li><a href="._cc-bs010.html">11</a></li>
-  <li><a href="._cc-bs011.html">12</a></li>
-  <li><a href="._cc-bs012.html">13</a></li>
   <li><a href="">...</a></li>
+  <li><a href="._cc-bs040.html">41</a></li>
+  <li><a href="._cc-bs041.html">42</a></li>
+  <li><a href="._cc-bs042.html">43</a></li>
+  <li><a href="._cc-bs043.html">44</a></li>
+  <li><a href="._cc-bs044.html">45</a></li>
+  <li><a href="._cc-bs045.html">46</a></li>
+  <li><a href="._cc-bs046.html">47</a></li>
+  <li><a href="._cc-bs047.html">48</a></li>
+  <li class="active"><a href="._cc-bs048.html">49</a></li>
+  <li><a href="._cc-bs049.html">50</a></li>
+  <li><a href="._cc-bs050.html">51</a></li>
+  <li><a href="._cc-bs051.html">52</a></li>
+  <li><a href="._cc-bs052.html">53</a></li>
+  <li><a href="._cc-bs053.html">54</a></li>
+  <li><a href="._cc-bs054.html">55</a></li>
+  <li><a href="._cc-bs055.html">56</a></li>
+  <li><a href="._cc-bs056.html">57</a></li>
   <li><a href="._cc-bs057.html">58</a></li>
-  <li><a href="._cc-bs004.html">&raquo;</a></li>
+  <li><a href="._cc-bs049.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
 
